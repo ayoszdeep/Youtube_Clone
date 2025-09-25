@@ -1,0 +1,39 @@
+.sidebar {
+  padding: 1.25rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  min-height: 100vh;
+  width: 220px;
+}
+
+.section {
+  margin-bottom: 1rem;
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #475569;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+
+    &:hover {
+      background: #eef2f7;
+      color: #2563eb;
+    }
+  }
+}
+
+h4 {
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem 1rem;
+  color: #334155;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
