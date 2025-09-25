@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { YOU_API } from '../utils/constants';
 import VideoCarts from './VideoCarts';
+import { Link } from 'react-router-dom';
 
 const VideoContainer = () => {
   const [videoData, setVideoData] = useState([]);
@@ -21,7 +22,9 @@ const VideoContainer = () => {
       ) : (
         <div className="flex flex-wrap gap-6 justify-center">
           {videoData.map((video) => (
-            <VideoCarts key={video.id} info={video} />
+            <Link key={video.id} to={`/watch?v=${video.id}`}>
+              <VideoCarts info={video} />
+            </Link>
           ))}
         </div>
       )}

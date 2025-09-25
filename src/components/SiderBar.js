@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styles from '../styles/Sidebar.module.scss'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const isMenuOpen = useSelector(store => store.app.isMenuOpen)
@@ -11,7 +12,7 @@ const Sidebar = () => {
     <aside className={styles.sidebar}>
       <nav>
         <ul className={styles.section}>
-          <li>Home</li>
+          <li><Link to="/">Home</Link></li>
           <li>Shorts</li>
           <li>Video</li>
           <li>Live</li>
