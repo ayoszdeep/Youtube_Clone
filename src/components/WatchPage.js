@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { closeMenu } from '../utils/appSlice';
+import CommnetsContainers from './CommnetsContainers';
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -14,6 +15,7 @@ const WatchPage = () => {
   const videoId = searchParams.get('v');
 
   return (
+    <div className='p-5 m-2 flex flex-col'>
     <div>
      <iframe width="1100"
       height="700" 
@@ -21,6 +23,8 @@ const WatchPage = () => {
       title="Merge Sort Using Recursion (Theory + Complexity + Code)" 
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <CommnetsContainers/>
     </div>
   );
 };
