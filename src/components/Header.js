@@ -18,7 +18,7 @@ const Header = () => {
         setSuggestions([]);
         return;
       }
-      // If we have cached results for this query, use them
+   
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
       } else {
@@ -39,7 +39,7 @@ const Header = () => {
   };
 
   return (
-    <div className="grid grid-cols-12 items-center w-full bg-white px-4 py-2 shadow-xl">
+    <div className="grid items-center w-full grid-cols-12 px-4 py-2 bg-white shadow-xl">
       {/* Logo and Icon */}
       <div className="flex items-center col-span-2 gap-2">
         <img
@@ -58,29 +58,29 @@ const Header = () => {
       </div>
 
       {/* Search bar */}
-      <div className="col-span-9 flex justify-center relative">
-        <div className="flex relative">
+      <div className="relative flex justify-center col-span-9">
+        <div className="relative flex">
           <input
             type="text"
             placeholder="Search"
-            className="border border-gray-300 rounded-l-full px-4 py-2 outline-none w-96"
+            className="px-4 py-2 text-white border border-white rounded-l-full outline-none w-96"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
           />
-          <button className="bg-red-600 text-white px-6 py-2 rounded-r-full">
+          <button className="px-6 py-2 text-white bg-red-600 rounded-r-full">
             Search
           </button>
 
           {/* Suggestions */}
           {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute top-full left-0 w-96 bg-white border shadow-lg z-50 mt-1">
+            <div className="absolute left-0 z-50 mt-1 bg-white border shadow-lg top-full w-96">
               <ul>
                 {suggestions.map((s) => (
                   <li
                     key={s}
-                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    className="px-4 py-2 cursor-pointer hover:bg-gray-100"
                     onMouseDown={() => setSearchQuery(s)}
                   >
                     {s}
@@ -93,11 +93,11 @@ const Header = () => {
       </div>
 
       {/* Profile */}
-      <div className="flex justify-end items-center col-span-1">
+      <div className="flex items-center justify-end col-span-1">
         <img
           src="https://i.pinimg.com/474x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg"
           alt="profile"
-          className="h-12 w-12 rounded-full"
+          className="w-12 h-12 rounded-full"
         />
       </div>
     </div>

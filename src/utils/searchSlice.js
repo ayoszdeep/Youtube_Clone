@@ -6,7 +6,7 @@ const searchSlice = createSlice({
   initialState: {},
   reducers: {
     cacheResults: (state, action) => {
-      // Immer lets us mutate state directly
+    
       const { query, results } = action.payload;
       state[query] = results;
     },

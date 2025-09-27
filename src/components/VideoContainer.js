@@ -16,14 +16,16 @@ const VideoContainer = () => {
   }, []);
 
   return (
-    <div className="p-6 min-h-screen bg-gray-100">
+    <div className="p-6 min-h-screen bg-gray-50">
       {videoData.length === 0 ? (
         <div className="text-xl text-gray-500 text-center mt-24">Loading...</div>
       ) : (
-        <div className="flex flex-wrap gap-6 justify-center">
+        <div className="flex flex-wrap gap-8 justify-center">
           {videoData.map((video) => (
             <Link key={video.id} to={`/watch?v=${video.id}`}>
-              <VideoCarts info={video} />
+              <div className="transition duration-150 hover:scale-105">
+                <VideoCarts info={video} />
+              </div>
             </Link>
           ))}
         </div>
